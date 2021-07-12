@@ -1,0 +1,47 @@
+<div class="container-fluid gedf-wrapper">
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-8 gedf-main">
+
+            <!-- Create Post -->
+            <div class="card gedf-card">
+                <div class="card-header">
+                    <h5>Create Post</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="sr-only" for="message">post</label>
+                        <textarea class="form-control" id="message" rows="4"
+                            placeholder="What are you thinking?"></textarea>
+                    </div>
+                    <div class="btn-toolbar justify-content-end">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Create Post -->
+
+
+            <!-- Search -->
+            <div class="bg-light p-3 mb-4">
+                <div class="form-group mb-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        [formControl]="searchControl">
+                </div>
+            </div>
+            <!-- Search -->
+
+            <!--- \\\\\\\Post-->
+            <div *ngFor="let post of filteredPosts | async" class="mb-4">
+                <app-post [post]="post"></app-post>
+            </div>
+            <!-- Post /////-->
+
+        </div>
+    </div>
+</div>
