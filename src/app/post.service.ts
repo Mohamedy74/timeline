@@ -14,7 +14,7 @@ export class PostService {
   }
 
   getPost(id: number) {
-    return this.http.get(environment.baseUrl + '')
+    return this.http.get(environment.baseUrl + 'posts/' + id);
   }
 
   updatePost(id: number, post: any) {
