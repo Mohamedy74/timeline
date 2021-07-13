@@ -22,14 +22,3 @@
     content: none;
     display: none;
 }
-
-.spinner-border {
-    display: inline-block;
-    width: 6rem;
-    height: 6rem;
-    vertical-align: text-bottom;
-    border: 0.5em solid currentColor;
-    border-right-color: transparent;
-    border-radius: 50%;
-    animation: 0.75s linear infinite spinner-border;
-}

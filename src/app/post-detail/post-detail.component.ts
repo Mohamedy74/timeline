@@ -15,6 +15,8 @@ export class PostDetailComponent implements OnInit {
   post: any;
   postForm: FormGroup = new FormGroup({});
   editMode = false;
+  loading = false;
+  loadingSenddata = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,19 +38,23 @@ export class PostDetailComponent implements OnInit {
   }
 
   getPost(id: number) {
+    this.loading = true;
     this.postService.getPost(id).subscribe(
       res => {
         this.post = res;
         console.log(this.post);
         this.initForm();
+        this.loading = false;
       },
       err => {
-
+        this.router.navigate(['/posts']);
+        this.loading = false;
       }
     )
   }
 
   updatePost() {
+    this.loadingSenddata = true;
     const post = {
       title: this.postForm.get('title')?.value,
       body: this.postForm.get('body')?.value,
@@ -57,9 +63,10 @@ export class PostDetailComponent implements OnInit {
     this.postService.updatePost(id, post).subscribe(
       res => {
         this.post = res;
+        this.loadingSenddata = false;
       },
       err => {
-
+        this.loadingSenddata = false;
       }
     )
   }

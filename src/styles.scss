@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~/node_modules/bootstrap/scss/bootstrap';
+.spinner-border.spinner-lg {
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    vertical-align: text-bottom;
+    border: 0.5em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: 0.75s linear infinite spinner-border;
+}
+.spinner-border.spinner-sm {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: 0.75s linear infinite spinner-border;
+}
